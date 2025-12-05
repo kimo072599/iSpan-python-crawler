@@ -95,9 +95,9 @@ def get_all_info(search_product : str, pages : int, sort: str = "最相關"):
     if len(item_list) == 0:
         print("無此商品")
         log = {search_product:"無此商品"}
-        if not os.path.exists("yahoo購物中心"):
-            os.mkdir(f"yahoo購物中心")
-        with open(f"yahoo購物中心/{search_product}資料.json", "w", encoding="utf-8") as f:
+        if not os.path.exists("shopping/yahoo購物中心"):
+            os.mkdir(f"shopping/yahoo購物中心")
+        with open(f"shopping/yahoo購物中心/{search_product}資料.json", "w", encoding="utf-8") as f:
             json.dump(log, f, indent=4, ensure_ascii=False)
     else:
         # 排序方式
@@ -136,10 +136,10 @@ def get_all_info(search_product : str, pages : int, sort: str = "最相關"):
                     scroll_down_slowly()
                     get_item_info()
 
-        if not os.path.exists("yahoo購物中心"):
-            os.mkdir(f"yahoo購物中心")
+        if not os.path.exists("shopping/yahoo購物中心"):
+            os.mkdir(f"shopping/yahoo購物中心")
 
-        with open(f"yahoo購物中心/{search_product}資料.json", "w", encoding="utf-8") as f:
+        with open(f"shopping/yahoo購物中心/{search_product}資料.json", "w", encoding="utf-8") as f:
             json.dump(all_item_info, f, indent=4, ensure_ascii=False)
     
 
