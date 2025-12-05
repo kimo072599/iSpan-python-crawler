@@ -84,7 +84,7 @@ for info in all_movie_info:
     try:
         comment_info = get_comment(info["Link"])
     except Exception as e:
-        with open("error_log.txt", "a") as f:
+        with open("error_log.txt", "a", encoding="utf-8") as f:
             f.write(f"{info["name"]}-{info["Link"]}:{e}")
 
     all_info[info["name"]] = {
